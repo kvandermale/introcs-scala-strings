@@ -23,8 +23,16 @@ object strings  {
 
 
    def getSentenceType(sentence : String) : String = {
-     
-      "unknown"
+       if(sentence.endsWith(".")){
+          "declarative"}else{
+            if(sentence.endsWith("?")){
+               "interrogative"}else{
+                if(sentence.endsWith("!")){
+                   "exclamatory"}else{
+                    "unknown"
+                }
+            }
+        }
    }
 
 /*
@@ -40,8 +48,8 @@ object strings  {
  */
 
    def getFormattedName(name : String) : String = {
-     
-      "name not calculated yet"
+       "Reformatted name: "
+       name.split(" ").reverse.mkString(", ")
    }
 
 }
